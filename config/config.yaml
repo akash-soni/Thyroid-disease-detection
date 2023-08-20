@@ -1,0 +1,33 @@
+columns:
+  - age: int
+  - sex: string
+  - on_thyroxine: string
+  - query_on_thyroxine: string
+  - on_antithyroid_medication: string
+  - sick: string
+  - pregnant: string
+  - thyroid_surgery: string
+  - I131_treatment: string
+  - query_hypothyroid: string
+  - query_hyperthyroid: string
+  - lithium: string
+  - goitre: string
+  - tumor: string
+  - hypopituitary: string
+  - psych: string
+  - TSH_measured: string
+  - TSH: float
+  - T3_measured: string
+  - T3: float
+  - TT4_measured: string
+  - TT4: float
+  - T4U_measured: string
+  - T4U: float
+  - FTI_measured: string
+  - FTI: float
+  - TBG_measured: string
+  - TBG: string
+  - referral_source: string
+  - class: string
+
+train_column_length: 30
