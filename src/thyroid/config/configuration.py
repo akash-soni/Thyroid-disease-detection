@@ -1,6 +1,6 @@
 from thyroid.constants import *
 from thyroid.utils.common import read_yaml, create_directories
-from thyroid.entity.config_entity import (DataIngestionConfig)
+from thyroid.entity.config_entity import (DataIngestionConfig, DataValidationConfig)
 from pathlib import Path
 import os
 
@@ -30,3 +30,18 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+
+    def get_data_validation_config(self) -> DataValidationConfig:
+        config = self.config.data_validation
+
+        create_directories([config.root_dir])
+
+        data_validation_config = DataValidationConfig(
+            ingestion_dir=config.ingestion_dir,
+            root_dir=config.root_dir,
+            ALL_REQUIRED_FILES=config.ALL_REQUIRED_FILES,
+            columns=config.columns,
+            ann_columns=config.ann_columns
+        )
+
+        return data_validation_config
