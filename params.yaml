@@ -1,1 +1,9 @@
-dummy : True
+transformations:
+  merged_file : merged-data.csv
+  threshold : 0.50
+  z_threshold : 3
+  encoder_file : enc.pickle
+  data_file : transformed-data.csv
+  clustering_file : clustering-data.csv
+  cluster_plot : k-means-elbow.png
+  cluster_model : KMeans.pkl

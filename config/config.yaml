@@ -44,3 +44,17 @@ data_validation:
     - referral_source
     - class
 
+data_transformation:
+  validation_dir: artifacts/data_validation
+  root_dir: artifacts/data_transformation
+  encoding_dir: artifacts/label_encoding
+  data_dir: artifacts/data_transformation/transformed_data
+  clustered_dir: artifacts/data_transformation/clustered_data
+  cluster_model_dir: artifacts/models/cluster_model
+  plot_dir: artifacts/plots
+  categorical_columns: ['on_thyroxine', 'query_on_thyroxine', 'on_antithyroid_medication', 'sick', 'pregnant', 'thyroid_surgery', 'I131_treatment', 'query_hypothyroid','query_hyperthyroid', 'lithium', 'goitre', 'tumor', 'hypopituitary', 'psych']
+  numerical_columns: ["age","TSH","T3","TT4","T4U","FTI"]
+  drop_columns: ['TBG_measured', 'FTI_measured','TT4_measured', 'T3_measured','TSH_measured','T4U_measured','referral_source']
+  categorical_columns_to_convert: [
+    'sex','on_thyroxine', 'query_on_thyroxine', 'on_antithyroid_medication', 'sick', 'pregnant', 'thyroid_surgery', 'I131_treatment',
+    'query_hypothyroid', 'query_hyperthyroid', 'lithium', 'goitre','tumor', 'hypopituitary', 'psych']
