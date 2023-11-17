@@ -1,9 +1,39 @@
 from thyroid.logging import logger
-from thyroid.utils.exception import customException
-import sys
-logger.info("Welcome to custom logs!")
+from thyroid.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
+from thyroid.pipeline.stage_02_data_validation import DataValidationTrainingPipeline  
+from thyroid.pipeline.stage_03_data_transformation import DataTransformationTrainingPipeline  
+
+STAGE_NAME = "DATA_INGESTION_STAGE"
 
 try:
-    x = 10/0
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    data_ingestion = DataIngestionTrainingPipeline()
+    data_ingestion.main()
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
 except Exception as e:
-    raise customException(e,sys) 
+    logger.exception(e)
+    raise e
+
+
+STAGE_NAME = "DATA_VALIDATION_PIPELINE"
+
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    data_validation = DataValidationTrainingPipeline()
+    data_validation.main()
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+
+STAGE_NAME = "DATA_TRANSFORMATION_PIPELINE"
+
+try:
+    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+    data_transformation = DataTransformationTrainingPipeline()
+    data_transformation.main()
+    logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+    logger.exception(e)
+    raise e
