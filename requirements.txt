@@ -15,4 +15,6 @@ scipy
 certifi
 Scrapy
 imabalnced-learn
+xgboost
+catboost
 -e .
